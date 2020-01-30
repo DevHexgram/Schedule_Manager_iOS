@@ -17,6 +17,8 @@
 		4EABE9DD23DD823800C92A19 /* ScheduleManagerUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9DC23DD823800C92A19 /* ScheduleManagerUITests.swift */; };
 		4EABE9EC23DD86A400C92A19 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4EABE9EB23DD86A400C92A19 /* Alamofire */; };
 		4EABE9EE23DDB50700C92A19 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9ED23DDB50700C92A19 /* LoginView.swift */; };
+		4EDBA22A23E30B4800DD0A01 /* keyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBA22923E30B4800DD0A01 /* keyboardGuardian.swift */; };
+		4EDBA22C23E30B9100DD0A01 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBA22B23E30B9100DD0A01 /* GeometryGetter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +54,8 @@
 		4EABE9DC23DD823800C92A19 /* ScheduleManagerUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleManagerUITests.swift; sourceTree = "<group>"; };
 		4EABE9DE23DD823800C92A19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4EABE9ED23DDB50700C92A19 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		4EDBA22923E30B4800DD0A01 /* keyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardGuardian.swift; sourceTree = "<group>"; };
+		4EDBA22B23E30B9100DD0A01 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +111,8 @@
 				4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */,
 				4EABE9BE23DD823500C92A19 /* ContentView.swift */,
 				4EABE9ED23DDB50700C92A19 /* LoginView.swift */,
+				4EDBA22B23E30B9100DD0A01 /* GeometryGetter.swift */,
+				4EDBA22923E30B4800DD0A01 /* keyboardGuardian.swift */,
 				4EABE9C023DD823800C92A19 /* Assets.xcassets */,
 				4EABE9C523DD823800C92A19 /* LaunchScreen.storyboard */,
 				4EABE9C823DD823800C92A19 /* Info.plist */,
@@ -278,7 +284,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4EDBA22A23E30B4800DD0A01 /* keyboardGuardian.swift in Sources */,
 				4EABE9BB23DD823500C92A19 /* AppDelegate.swift in Sources */,
+				4EDBA22C23E30B9100DD0A01 /* GeometryGetter.swift in Sources */,
 				4EABE9BD23DD823500C92A19 /* SceneDelegate.swift in Sources */,
 				4EABE9EE23DDB50700C92A19 /* LoginView.swift in Sources */,
 				4EABE9BF23DD823500C92A19 /* ContentView.swift in Sources */,
