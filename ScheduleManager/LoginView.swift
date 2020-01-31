@@ -18,9 +18,9 @@ struct LoginView: View {
     @State var Login: String = "登录"
     @State var tip: String = ""
     @State var isDisabled: Bool = false
-    var triggerWebViewFunc: (() -> Void)?
-    var triggerNewFuncGuideFunc: (() -> Void)?
-    var dismissFunc: (() -> Void)?
+//    var triggerMianViewFunc: (() -> Void)?
+//    var triggerNewFuncGuideFunc: (() -> Void)?
+    var triggerRegistView: (() -> Void)?
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         //限制只能输入数字，不能输入特殊字符
         let length = string.lengthOfBytes(using: String.Encoding.utf8)
@@ -35,6 +35,7 @@ struct LoginView: View {
         return true
     }
     var body: some View {
+//        NavigationView {
         VStack{
             Image("login")
                 .resizable()
@@ -86,20 +87,20 @@ struct LoginView: View {
                             case .success:
                                 let json = response.result.value
                                 print("!!!\(response)")
-                                print(json)
+//                                print(json)
                                 let msg = (json as! NSDictionary).object(forKey: "msg") as! String
                                 if msg == "success" {
                                     let newRawData = (json as! NSDictionary).object(forKey: "data") as! NSDictionary
                                     //let isValid = newRawData.object(forKey: "isValid") as! Bool
-                                    let sharedUd = UserDefaults.init()
+                                    let sharedUd = UserDefaults.init(suiteName: "sch.man")
                                     let token = newRawData.object(forKey: "token") as! String
-                                    sharedUd.set(token, forKey: "token")
-                                    sharedUd.synchronize()
+                                    sharedUd?.set(token, forKey: "token")
+                                    sharedUd?.synchronize()
                                     print(token)
-                                    self.triggerWebViewFunc?()
-                                    self.dismissFunc?()
+//                                    self.triggerWebViewFunc?()
+//                                    self.dismissFunc?()
                                     self.tip = ""
-                                    self.triggerNewFuncGuideFunc?()
+//                                    self.triggerNewFuncGuideFunc?()
                                 }
                                 else {
                                     self.Login = "登录"
@@ -141,16 +142,21 @@ struct LoginView: View {
                 Text("还没账号？")
                     .font(.footnote)
                 Button(action: {
-                    
+                    self.triggerRegistView?()
                 }){
-                    Text("戳我注册")
-                        .font(.footnote)
+//                    NavigationLink(destination: RegistView()) {
+                        Text("戳我注册")
+                            .font(.footnote)
+//                    }
                 }
             }.offset(y: 150)
         }
             .padding(.horizontal, 40)
             .offset(y: kGuardian.slide)
             .animation(.easeInOut)
+//            .navigationViewStyle(DefaultNavigationViewStyle())
+//            .navigationViewStyle(DoubleColumnNavigationViewStyle())
+//        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }
 

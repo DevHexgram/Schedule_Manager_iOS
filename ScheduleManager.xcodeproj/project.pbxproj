@@ -7,9 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4E1F50ED23E469170058D993 /* LoginController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50EC23E469170058D993 /* LoginController.swift */; };
+		4E1F50EF23E46F570058D993 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50EE23E46F570058D993 /* ViewController.swift */; };
+		4E1F50F223E4705D0058D993 /* DeviceKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4E1F50F123E4705D0058D993 /* DeviceKit */; };
+		4E1F50F423E474340058D993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1F50F323E474340058D993 /* Main.storyboard */; };
+		4E1F50F623E47F690058D993 /* RegistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50F523E47F690058D993 /* RegistController.swift */; };
 		4EABE9BB23DD823500C92A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9BA23DD823500C92A19 /* AppDelegate.swift */; };
 		4EABE9BD23DD823500C92A19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */; };
-		4EABE9BF23DD823500C92A19 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9BE23DD823500C92A19 /* ContentView.swift */; };
 		4EABE9C123DD823800C92A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EABE9C023DD823800C92A19 /* Assets.xcassets */; };
 		4EABE9C423DD823800C92A19 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EABE9C323DD823800C92A19 /* Preview Assets.xcassets */; };
 		4EABE9C723DD823800C92A19 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4EABE9C523DD823800C92A19 /* LaunchScreen.storyboard */; };
@@ -19,6 +23,7 @@
 		4EABE9EE23DDB50700C92A19 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9ED23DDB50700C92A19 /* LoginView.swift */; };
 		4EDBA22A23E30B4800DD0A01 /* keyboardGuardian.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBA22923E30B4800DD0A01 /* keyboardGuardian.swift */; };
 		4EDBA22C23E30B9100DD0A01 /* GeometryGetter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBA22B23E30B9100DD0A01 /* GeometryGetter.swift */; };
+		4EDBA22E23E37E0000DD0A01 /* RegistView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EDBA22D23E37E0000DD0A01 /* RegistView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,10 +44,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		4E1F50EC23E469170058D993 /* LoginController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginController.swift; sourceTree = "<group>"; };
+		4E1F50EE23E46F570058D993 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4E1F50F323E474340058D993 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		4E1F50F523E47F690058D993 /* RegistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistController.swift; sourceTree = "<group>"; };
 		4EABE9B723DD823500C92A19 /* ScheduleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EABE9BA23DD823500C92A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4EABE9BE23DD823500C92A19 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		4EABE9C023DD823800C92A19 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4EABE9C323DD823800C92A19 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		4EABE9C623DD823800C92A19 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -56,6 +64,7 @@
 		4EABE9ED23DDB50700C92A19 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
 		4EDBA22923E30B4800DD0A01 /* keyboardGuardian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = keyboardGuardian.swift; sourceTree = "<group>"; };
 		4EDBA22B23E30B9100DD0A01 /* GeometryGetter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryGetter.swift; sourceTree = "<group>"; };
+		4EDBA22D23E37E0000DD0A01 /* RegistView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +73,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				4EABE9EC23DD86A400C92A19 /* Alamofire in Frameworks */,
+				4E1F50F223E4705D0058D993 /* DeviceKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -109,12 +119,16 @@
 			children = (
 				4EABE9BA23DD823500C92A19 /* AppDelegate.swift */,
 				4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */,
-				4EABE9BE23DD823500C92A19 /* ContentView.swift */,
+				4E1F50EE23E46F570058D993 /* ViewController.swift */,
 				4EABE9ED23DDB50700C92A19 /* LoginView.swift */,
+				4EDBA22D23E37E0000DD0A01 /* RegistView.swift */,
 				4EDBA22B23E30B9100DD0A01 /* GeometryGetter.swift */,
+				4E1F50EC23E469170058D993 /* LoginController.swift */,
 				4EDBA22923E30B4800DD0A01 /* keyboardGuardian.swift */,
 				4EABE9C023DD823800C92A19 /* Assets.xcassets */,
 				4EABE9C523DD823800C92A19 /* LaunchScreen.storyboard */,
+				4E1F50F323E474340058D993 /* Main.storyboard */,
+				4E1F50F523E47F690058D993 /* RegistController.swift */,
 				4EABE9C823DD823800C92A19 /* Info.plist */,
 				4EABE9C223DD823800C92A19 /* Preview Content */,
 			);
@@ -165,6 +179,7 @@
 			name = ScheduleManager;
 			packageProductDependencies = (
 				4EABE9EB23DD86A400C92A19 /* Alamofire */,
+				4E1F50F123E4705D0058D993 /* DeviceKit */,
 			);
 			productName = ScheduleManager;
 			productReference = 4EABE9B723DD823500C92A19 /* ScheduleManager.app */;
@@ -240,6 +255,7 @@
 			mainGroup = 4EABE9AE23DD823500C92A19;
 			packageReferences = (
 				4EABE9EA23DD86A400C92A19 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4E1F50F023E4705D0058D993 /* XCRemoteSwiftPackageReference "DeviceKit" */,
 			);
 			productRefGroup = 4EABE9B823DD823500C92A19 /* Products */;
 			projectDirPath = "";
@@ -260,6 +276,7 @@
 				4EABE9C723DD823800C92A19 /* LaunchScreen.storyboard in Resources */,
 				4EABE9C423DD823800C92A19 /* Preview Assets.xcassets in Resources */,
 				4EABE9C123DD823800C92A19 /* Assets.xcassets in Resources */,
+				4E1F50F423E474340058D993 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,9 +304,12 @@
 				4EDBA22A23E30B4800DD0A01 /* keyboardGuardian.swift in Sources */,
 				4EABE9BB23DD823500C92A19 /* AppDelegate.swift in Sources */,
 				4EDBA22C23E30B9100DD0A01 /* GeometryGetter.swift in Sources */,
+				4E1F50EF23E46F570058D993 /* ViewController.swift in Sources */,
 				4EABE9BD23DD823500C92A19 /* SceneDelegate.swift in Sources */,
 				4EABE9EE23DDB50700C92A19 /* LoginView.swift in Sources */,
-				4EABE9BF23DD823500C92A19 /* ContentView.swift in Sources */,
+				4E1F50ED23E469170058D993 /* LoginController.swift in Sources */,
+				4EDBA22E23E37E0000DD0A01 /* RegistView.swift in Sources */,
+				4E1F50F623E47F690058D993 /* RegistController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -616,6 +636,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4E1F50F023E4705D0058D993 /* XCRemoteSwiftPackageReference "DeviceKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/devicekit/DeviceKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 		4EABE9EA23DD86A400C92A19 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -627,6 +655,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4E1F50F123E4705D0058D993 /* DeviceKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E1F50F023E4705D0058D993 /* XCRemoteSwiftPackageReference "DeviceKit" */;
+			productName = DeviceKit;
+		};
 		4EABE9EB23DD86A400C92A19 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4EABE9EA23DD86A400C92A19 /* XCRemoteSwiftPackageReference "Alamofire" */;
