@@ -18,8 +18,9 @@ struct LoginView: View {
     @State var Login: String = "登录"
     @State var tip: String = ""
     @State var isDisabled: Bool = false
-//    var triggerMianViewFunc: (() -> Void)?
-//    var triggerNewFuncGuideFunc: (() -> Void)?
+    @State var showErr: Int = 0
+    @State private var showingAlert: Bool = false
+    var dismissFunc: (() -> Void)?
     var triggerRegistView: (() -> Void)?
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         //限制只能输入数字，不能输入特殊字符
@@ -43,10 +44,10 @@ struct LoginView: View {
                 .clipShape(Circle())
                 .offset(y: -150)
             VStack {
-                Text("快和我签订契约嘤~")
-                    .padding(.bottom)
-                    .offset(y: -150)
-                    .font(.footnote)
+//                Text("快和我签订契约嘤~")
+//                    .padding(.bottom)
+//                    .offset(y: -150)
+//                    .font(.footnote)
                 VStack {
                     
                     TextField("账号", text: $username, onEditingChanged: { target in
@@ -89,6 +90,7 @@ struct LoginView: View {
                                 print("!!!\(response)")
 //                                print(json)
                                 let msg = (json as! NSDictionary).object(forKey: "msg") as! String
+                                 let err = (json as! NSDictionary).object(forKey: "error") as! Int
                                 if msg == "success" {
                                     let newRawData = (json as! NSDictionary).object(forKey: "data") as! NSDictionary
                                     //let isValid = newRawData.object(forKey: "isValid") as! Bool
@@ -98,11 +100,15 @@ struct LoginView: View {
                                     sharedUd?.synchronize()
                                     print(token)
 //                                    self.triggerWebViewFunc?()
-//                                    self.dismissFunc?()
+                                    self.dismissFunc?()
                                     self.tip = ""
 //                                    self.triggerNewFuncGuideFunc?()
                                 }
                                 else {
+                                    if err != 0 {
+                                        self.showErr = err
+                                        self.showingAlert = true
+                                    }
                                     self.Login = "登录"
                                     self.tip = "登录失败，请检查账号或密码"
                                     DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(3), execute: {
@@ -131,7 +137,6 @@ struct LoginView: View {
                             .padding(.top, 15)
                             .padding(.bottom, 15)
                             .font(.headline)
-                            //.padding(.leading, 10)
                     }
                     }.disabled(isDisabled)
                     .background(Color.init(UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)))
@@ -144,19 +149,14 @@ struct LoginView: View {
                 Button(action: {
                     self.triggerRegistView?()
                 }){
-//                    NavigationLink(destination: RegistView()) {
                         Text("戳我注册")
                             .font(.footnote)
-//                    }
                 }
             }.offset(y: 150)
         }
             .padding(.horizontal, 40)
             .offset(y: kGuardian.slide)
             .animation(.easeInOut)
-//            .navigationViewStyle(DefaultNavigationViewStyle())
-//            .navigationViewStyle(DoubleColumnNavigationViewStyle())
-//        }.navigationViewStyle(DoubleColumnNavigationViewStyle())
     }
 }
 
