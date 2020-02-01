@@ -14,6 +14,11 @@ class RegistController: UIHostingController<RegistView> {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder, rootView: RegistView())
     //    let vc = self.presentingViewController?.children[0] as! ViewController
-        self.rootView = RegistView()
+        self.rootView = RegistView(
+            triggerLoginView: {
+                self.dismiss(animated: true, completion: nil)
+            }
+        )
+        
     }
 }
