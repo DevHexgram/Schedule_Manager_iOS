@@ -10,15 +10,21 @@
         <!--Regist Controller-->
         <scene sceneID="WWA-Ek-4nX">
             <objects>
-                <hostingController id="jIe-bs-Run" customClass="RegistController" customModule="ScheduleManager" sceneMemberID="viewController"/>
+                <hostingController id="jIe-bs-Run" customClass="RegistController" customModule="ScheduleManager" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="Nva-vC-L6M"/>
+                </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cn-5n-YBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1241" y="-508"/>
+            <point key="canvasLocation" x="2117" y="-342"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="yOm-10-RGd">
             <objects>
-                <hostingController id="Kmt-5x-Ycb" customClass="LoginController" customModule="ScheduleManager" sceneMemberID="viewController"/>
+                <hostingController id="Kmt-5x-Ycb" customClass="LoginController" customModule="ScheduleManager" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="jIe-bs-Run" kind="showDetail" identifier="gotoRegist" id="WiT-Nx-Nt5"/>
+                    </connections>
+                </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBR-2e-3sG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1242" y="140"/>
@@ -62,7 +68,6 @@
                     <navigationItem key="navigationItem" id="dHC-yO-otL"/>
                     <connections>
                         <segue destination="Kmt-5x-Ycb" kind="presentation" identifier="gotoLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="uwR-21-LX5"/>
-                        <segue destination="jIe-bs-Run" kind="presentation" identifier="gotoRegist" id="voX-hI-x1w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seE-qG-wTX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
