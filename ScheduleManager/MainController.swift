@@ -6,16 +6,17 @@
 //  Copyright © 2020 DevHexgram. All rights reserved.
 //
 
+import Foundation
 import SwiftUI
+import UIKit
 
-struct MainViewController: View {
-    var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
-
-struct MainViewController_Previews: PreviewProvider {
-    static var previews: some View {
-        MainViewController()
+class MainController: UIHostingController<MainView> {
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder, rootView: MainView())
+    //    let vc = self.presentingViewController?.children[0] as! ViewController
+        self.rootView = MainView(
+            
+        )
+        
     }
 }

@@ -13,6 +13,10 @@
 		4E1F50F423E474340058D993 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E1F50F323E474340058D993 /* Main.storyboard */; };
 		4E1F50F623E47F690058D993 /* RegistController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50F523E47F690058D993 /* RegistController.swift */; };
 		4E1F50F823E5CFA70058D993 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50F723E5CFA70058D993 /* ErrorHandler.swift */; };
+		4E1F50FA23E72FF50058D993 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50F923E72FF50058D993 /* MainView.swift */; };
+		4E1F50FC23E730010058D993 /* MainController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50FB23E730010058D993 /* MainController.swift */; };
+		4E1F50FE23E730830058D993 /* DailyAffairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50FD23E730830058D993 /* DailyAffairsView.swift */; };
+		4E1F510023E7308F0058D993 /* AffairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50FF23E7308F0058D993 /* AffairsView.swift */; };
 		4EABE9BB23DD823500C92A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9BA23DD823500C92A19 /* AppDelegate.swift */; };
 		4EABE9BD23DD823500C92A19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */; };
 		4EABE9C123DD823800C92A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EABE9C023DD823800C92A19 /* Assets.xcassets */; };
@@ -50,6 +54,10 @@
 		4E1F50F323E474340058D993 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		4E1F50F523E47F690058D993 /* RegistController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistController.swift; sourceTree = "<group>"; };
 		4E1F50F723E5CFA70058D993 /* ErrorHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
+		4E1F50F923E72FF50058D993 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
+		4E1F50FB23E730010058D993 /* MainController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainController.swift; sourceTree = "<group>"; };
+		4E1F50FD23E730830058D993 /* DailyAffairsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAffairsView.swift; sourceTree = "<group>"; };
+		4E1F50FF23E7308F0058D993 /* AffairsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffairsView.swift; sourceTree = "<group>"; };
 		4EABE9B723DD823500C92A19 /* ScheduleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EABE9BA23DD823500C92A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -123,15 +131,19 @@
 				4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */,
 				4E1F50EE23E46F570058D993 /* ViewController.swift */,
 				4EABE9ED23DDB50700C92A19 /* LoginView.swift */,
+				4E1F50EC23E469170058D993 /* LoginController.swift */,
 				4EDBA22D23E37E0000DD0A01 /* RegistView.swift */,
+				4E1F50F523E47F690058D993 /* RegistController.swift */,
+				4E1F50F923E72FF50058D993 /* MainView.swift */,
+				4E1F50FB23E730010058D993 /* MainController.swift */,
+				4E1F50FD23E730830058D993 /* DailyAffairsView.swift */,
+				4E1F50FF23E7308F0058D993 /* AffairsView.swift */,
 				4E1F50F723E5CFA70058D993 /* ErrorHandler.swift */,
 				4EDBA22B23E30B9100DD0A01 /* GeometryGetter.swift */,
-				4E1F50EC23E469170058D993 /* LoginController.swift */,
 				4EDBA22923E30B4800DD0A01 /* keyboardGuardian.swift */,
 				4EABE9C023DD823800C92A19 /* Assets.xcassets */,
 				4EABE9C523DD823800C92A19 /* LaunchScreen.storyboard */,
 				4E1F50F323E474340058D993 /* Main.storyboard */,
-				4E1F50F523E47F690058D993 /* RegistController.swift */,
 				4EABE9C823DD823800C92A19 /* Info.plist */,
 				4EABE9C223DD823800C92A19 /* Preview Content */,
 			);
@@ -307,10 +319,14 @@
 				4EDBA22A23E30B4800DD0A01 /* keyboardGuardian.swift in Sources */,
 				4EABE9BB23DD823500C92A19 /* AppDelegate.swift in Sources */,
 				4EDBA22C23E30B9100DD0A01 /* GeometryGetter.swift in Sources */,
+				4E1F50FC23E730010058D993 /* MainController.swift in Sources */,
 				4E1F50F823E5CFA70058D993 /* ErrorHandler.swift in Sources */,
+				4E1F510023E7308F0058D993 /* AffairsView.swift in Sources */,
 				4E1F50EF23E46F570058D993 /* ViewController.swift in Sources */,
 				4EABE9BD23DD823500C92A19 /* SceneDelegate.swift in Sources */,
 				4EABE9EE23DDB50700C92A19 /* LoginView.swift in Sources */,
+				4E1F50FA23E72FF50058D993 /* MainView.swift in Sources */,
+				4E1F50FE23E730830058D993 /* DailyAffairsView.swift in Sources */,
 				4E1F50ED23E469170058D993 /* LoginController.swift in Sources */,
 				4EDBA22E23E37E0000DD0A01 /* RegistView.swift in Sources */,
 				4E1F50F623E47F690058D993 /* RegistController.swift in Sources */,

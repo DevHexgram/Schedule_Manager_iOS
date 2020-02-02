@@ -15,7 +15,7 @@
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5Cn-5n-YBS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2117" y="-342"/>
+            <point key="canvasLocation" x="2101" y="-295"/>
         </scene>
         <!--Login Controller-->
         <scene sceneID="yOm-10-RGd">
@@ -23,11 +23,12 @@
                 <hostingController id="Kmt-5x-Ycb" customClass="LoginController" customModule="ScheduleManager" sceneMemberID="viewController">
                     <connections>
                         <segue destination="jIe-bs-Run" kind="showDetail" identifier="gotoRegist" id="WiT-Nx-Nt5"/>
+                        <segue destination="ruO-Ie-KFW" kind="presentation" identifier="gotoMain" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="9qf-AD-Dc6"/>
                     </connections>
                 </hostingController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QBR-2e-3sG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1242" y="140"/>
+            <point key="canvasLocation" x="1241" y="-295"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="iau-lQ-afq">
@@ -52,27 +53,29 @@
                     <view key="view" contentMode="scaleToFill" id="7yp-FI-dNg">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="12433" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="emC-tn-2fq">
-                                <rect key="frame" x="72" y="207" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
-                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bru-kw-iax"/>
                     </view>
                     <navigationItem key="navigationItem" id="dHC-yO-otL"/>
                     <connections>
                         <segue destination="Kmt-5x-Ycb" kind="presentation" identifier="gotoLogin" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="uwR-21-LX5"/>
+                        <segue destination="ruO-Ie-KFW" kind="presentation" identifier="gotoMain" modalPresentationStyle="fullScreen" modalTransitionStyle="coverVertical" id="Gok-2G-acp"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="seE-qG-wTX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="243" y="140"/>
         </scene>
+        <!--Main Controller-->
+        <scene sceneID="70H-lq-dft">
+            <objects>
+                <hostingController id="ruO-Ie-KFW" customClass="MainController" customModule="ScheduleManager" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IDp-qp-NpZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="516"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="9qf-AD-Dc6"/>
+    </inferredMetricsTieBreakers>
 </document>

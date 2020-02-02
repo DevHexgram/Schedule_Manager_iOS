@@ -17,8 +17,7 @@ import DeviceKit
 
 let primaryColor = UIColor(red:0.20, green:0.60, blue:0.86, alpha:1.0)
 
-class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewControllerDelegate, WCSessionDelegate {
-    var wcSession : WCSession! = nil
+class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewControllerDelegate{
     var token: String? = nil
     
     func enableNotification () {
@@ -67,74 +66,74 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
 //        }
 //    }
     
-    func tryLoad(_ configUrl: String) {
-        print("!!!")
-        let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
-        Alamofire.request(configUrl).validate().responseJSON { response in
-            switch response.result {
-            case .success:
-                let json = response.result.value
-                //print("!!!!!!")
-                //print(json)
-                var title: String?
-                var desc: String?
-                var link: String?
-                var group: String?
-                var isForce: Bool?
-                if json != nil && currentVersion < "38"{
-                    let NS = json as! NSDictionary
-                    //print(NS)
-                    title = (NS.object(forKey: "testflightDialogTitle") as? String ?? nil)
-                    desc = (NS.object(forKey: "testflightDialogDesc") as? String ?? nil)
-                    link = (NS.object(forKey: "testflightLink") as? String ?? nil)
-                    isForce = (NS.object(forKey: "forceTestflight") as? Bool ?? nil)
-                    group = (NS.object(forKey: "testflightGroupLink") as? String ?? nil)
-                }
-//                title = "内测邀请"
-//                desc = "我们诚挚邀请您参与杭电助手内测"
-//                group = "https://qm.qq.com/cgi-bin/qm/qr?k=js9HOOUhRumi_NZCmpYdy4UVeuy9t39h&authKey=bv%2BglKZnvToSgmWvUAkc0ZtM%2FS%2FQfTg0NofbWL76quK9BC0RDRhMTUpSR8hp70%2Fv"
-//                isForce = false
-//                link = "https://qm.qq.com/cgi-bin/qm/qr?k=js9HOOUhRumi_NZCmpYdy4UVeuy9t39h&authKey=bv%2BglKZnvToSgmWvUAkc0ZtM%2FS%2FQfTg0NofbWL76quK9BC0RDRhMTUpSR8hp70%2Fv"
-//                print("@@@@")
-//                print(title!)
-//                print(desc!)
-//                print(link!)
-//                print(group)
-//                print("@@@@")
-                if title != nil && desc != nil && link != nil && group != nil {
-                    print("????")
-                    let alert = UIAlertController(title: "\(title!)", message: "\(desc!)", preferredStyle: .alert)
-                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
-                    if isForce == false {
-                        alert.addAction(cancelAction)
-                        alert.addAction(UIAlertAction(title: "加入内测群", style: .default, handler: { _ in
-                            UIApplication.shared.open(URL(string: "\(group!)")!)
-                        }))
-                        alert.addAction(UIAlertAction(title: "参与内测", style: .default, handler: { _ in
-                            UIApplication.shared.open(URL(string: "\(link!)")!)
-                        }))
-                    }
-                    else if isForce == true {
-                        alert.addAction(UIAlertAction(title: "加入内测群", style: .default, handler: { _ in
-                            UIApplication.shared.open(URL(string: "\(group!)")!)
-                        }))
-                        alert.addAction(UIAlertAction(title: "参与内测", style: .default, handler: { _ in
-                            UIApplication.shared.open(URL(string: "\(link!)")!)
-                        }))
-                    }
-                    self.present(alert, animated: true, completion: nil)
-                }
-                if json != nil {
-//                    self.shortcutFired(nativeLogin: false)
-                }
-                
-            case .failure:
-                let alert = UIAlertController(title: "连接服务器失败", message: "请检查您是否允许杭电助手联网，以及您设备的网络连接。", preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "重试", style: .default, handler: { _ in self.tryLoad(configUrl) }))
-                self.present(alert, animated: true, completion: nil)
-            }
-        }
-    }
+//    func tryLoad(_ configUrl: String) {
+//        print("!!!")
+//        let currentVersion = Bundle.main.infoDictionary?["CFBundleVersion"] as! String
+//        Alamofire.request(configUrl).validate().responseJSON { response in
+//            switch response.result {
+//            case .success:
+//                let json = response.result.value
+//                //print("!!!!!!")
+//                //print(json)
+//                var title: String?
+//                var desc: String?
+//                var link: String?
+//                var group: String?
+//                var isForce: Bool?
+//                if json != nil && currentVersion < "38"{
+//                    let NS = json as! NSDictionary
+//                    //print(NS)
+//                    title = (NS.object(forKey: "testflightDialogTitle") as? String ?? nil)
+//                    desc = (NS.object(forKey: "testflightDialogDesc") as? String ?? nil)
+//                    link = (NS.object(forKey: "testflightLink") as? String ?? nil)
+//                    isForce = (NS.object(forKey: "forceTestflight") as? Bool ?? nil)
+//                    group = (NS.object(forKey: "testflightGroupLink") as? String ?? nil)
+//                }
+////                title = "内测邀请"
+////                desc = "我们诚挚邀请您参与杭电助手内测"
+////                group = "https://qm.qq.com/cgi-bin/qm/qr?k=js9HOOUhRumi_NZCmpYdy4UVeuy9t39h&authKey=bv%2BglKZnvToSgmWvUAkc0ZtM%2FS%2FQfTg0NofbWL76quK9BC0RDRhMTUpSR8hp70%2Fv"
+////                isForce = false
+////                link = "https://qm.qq.com/cgi-bin/qm/qr?k=js9HOOUhRumi_NZCmpYdy4UVeuy9t39h&authKey=bv%2BglKZnvToSgmWvUAkc0ZtM%2FS%2FQfTg0NofbWL76quK9BC0RDRhMTUpSR8hp70%2Fv"
+////                print("@@@@")
+////                print(title!)
+////                print(desc!)
+////                print(link!)
+////                print(group)
+////                print("@@@@")
+//                if title != nil && desc != nil && link != nil && group != nil {
+//                    print("????")
+//                    let alert = UIAlertController(title: "\(title!)", message: "\(desc!)", preferredStyle: .alert)
+//                    let cancelAction = UIAlertAction(title: "取消", style: .cancel, handler: nil)
+//                    if isForce == false {
+//                        alert.addAction(cancelAction)
+//                        alert.addAction(UIAlertAction(title: "加入内测群", style: .default, handler: { _ in
+//                            UIApplication.shared.open(URL(string: "\(group!)")!)
+//                        }))
+//                        alert.addAction(UIAlertAction(title: "参与内测", style: .default, handler: { _ in
+//                            UIApplication.shared.open(URL(string: "\(link!)")!)
+//                        }))
+//                    }
+//                    else if isForce == true {
+//                        alert.addAction(UIAlertAction(title: "加入内测群", style: .default, handler: { _ in
+//                            UIApplication.shared.open(URL(string: "\(group!)")!)
+//                        }))
+//                        alert.addAction(UIAlertAction(title: "参与内测", style: .default, handler: { _ in
+//                            UIApplication.shared.open(URL(string: "\(link!)")!)
+//                        }))
+//                    }
+//                    self.present(alert, animated: true, completion: nil)
+//                }
+//                if json != nil {
+////                    self.shortcutFired(nativeLogin: false)
+//                }
+//
+//            case .failure:
+//                let alert = UIAlertController(title: "连接服务器失败", message: "请检查您是否允许杭电助手联网，以及您设备的网络连接。", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "重试", style: .default, handler: { _ in self.tryLoad(configUrl) }))
+//                self.present(alert, animated: true, completion: nil)
+//            }
+//        }
+//    }
     
 //    func alertLoad(_ configUrl: String) {
 //        Alamofire.request(configUrl).validate().responseJSON { response in
@@ -163,32 +162,35 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.performSegue(withIdentifier: "gotoLogin", sender: self)
         
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.shortcutFired), name: Notification.Name(rawValue: "ShortcutFired"), object: nil)
 //        NotificationCenter.default.addObserver(self, selector: #selector(self.shortcutFired), name: Notification.Name(rawValue: "IncomingToken"), object: nil)
         
-        let configUrlTmpl = "https://config.hduhelp.com/%@.json"
-        let bundleId = Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String
-        let configUrl = String(format: configUrlTmpl, bundleId ?? "help.hdu.lemon.ios")
-        let sharedUd = UserDefaults.init(suiteName: "group.help.hdu.lemon.ios")
+//        let configUrlTmpl = "https://config.hduhelp.com/%@.json"
+//        let bundleId = Bundle.main.infoDictionary?["CFBundleIdentifier"] as? String
+//        let configUrl = String(format: configUrlTmpl, bundleId ?? "help.hdu.lemon.ios")
+        let sharedUd = UserDefaults.init(suiteName: "sch.man")
 //        var isDelay = false
         
-        let currentVersion = Int(Bundle.main.infoDictionary?["CFBundleVersion"] as! String)
-        let savedVersion = sharedUd?.integer(forKey: "lastVersionGuided")
+//        let currentVersion = Int(Bundle.main.infoDictionary?["CFBundleVersion"] as! String)
+//        let savedVersion = sharedUd?.integer(forKey: "lastVersionGuided")
 //        print(currentVersion, savedVersion)
         let token = sharedUd?.string(forKey: "token")
         self.token = token
-        
-        if (savedVersion == nil || (currentVersion ?? 0) > (savedVersion ?? 0)) && token != nil{
-            self.performSegue(withIdentifier: "gotoNewFuncGuide", sender: self)
+        print("!!!\(self.token)")
+        if self.token == nil {
+            print("gotoLogin")
+            self.performSegue(withIdentifier: "gotoLogin", sender: self)
         }
+//        if (savedVersion == nil || (currentVersion ?? 0) > (savedVersion ?? 0)) && token != nil{
+//            self.performSegue(withIdentifier: "gotoNewFuncGuide", sender: self)
+//        }
         
-        if token != nil {
-            wcSession = WCSession.default
-            wcSession.delegate = self
-            wcSession.activate()
-        }
+//        if token != nil {
+//            wcSession = WCSession.default
+//            wcSession.delegate = self
+//            wcSession.activate()
+//        }
         
         Alamofire.request("https://api.hduhelp.com/token/validate", encoding: JSONEncoding.default, headers:["Authorization": "token \(token ?? "")", "User-Agent": "Alamofire Lemon_iOS"]).validate().responseJSON {
             response in switch response.result {
@@ -207,7 +209,7 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
 //                    print("!!!!!!!!!!!!!!!!!!")
             }
         }
-        tryLoad(configUrl)
+//        tryLoad(configUrl)
 
 //        if isDelay == true {
 //            DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2), execute: {
@@ -321,36 +323,36 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
 //        case OpenHdumap = "hdumap"
     }
     
-    func setupIntentForSiri(_ action: LemonAction) {
-        #if !targetEnvironment(macCatalyst)
-            var activity: NSUserActivity
-            var actionIdentifier: String
-            switch (action) {
-                case .OpenSchedule:
-                    actionIdentifier = "help.hdu.lemon.ios.schedule"
-                    activity = NSUserActivity(activityType: actionIdentifier)
-                    activity.title = "打开课表"
-                    activity.userInfo = ["speech" : "课表"]
-                case .OpenCard:
-                    actionIdentifier = "help.hdu.lemon.ios.card"
-                    activity = NSUserActivity(activityType: actionIdentifier)
-                    activity.title = "查看一卡通情况"
-                    activity.userInfo = ["speech" : "一卡通"]
-    //            case .OpenHdumap:
-    //                actionIdentifier = "help.hdu.lemon.ios.hdumap"
-    //                activity = NSUserActivity(activityType: actionIdentifier)
-    //                activity.title = "打开杭电地图"
-    //                activity.userInfo = ["speech" : "杭电地图"]
-            }
-            activity.isEligibleForSearch = true
-            activity.isEligibleForPrediction = true
-            activity.persistentIdentifier = NSUserActivityPersistentIdentifier(actionIdentifier)
-            let shortcut = INShortcut(userActivity: activity)
-            let vc = INUIAddVoiceShortcutViewController(shortcut: shortcut)
-            vc.delegate = self
-            present(vc, animated: true, completion: nil)
-        #endif
-    }
+//    func setupIntentForSiri(_ action: LemonAction) {
+//        #if !targetEnvironment(macCatalyst)
+//            var activity: NSUserActivity
+//            var actionIdentifier: String
+//            switch (action) {
+//                case .OpenSchedule:
+//                    actionIdentifier = "help.hdu.lemon.ios.schedule"
+//                    activity = NSUserActivity(activityType: actionIdentifier)
+//                    activity.title = "打开课表"
+//                    activity.userInfo = ["speech" : "课表"]
+//                case .OpenCard:
+//                    actionIdentifier = "help.hdu.lemon.ios.card"
+//                    activity = NSUserActivity(activityType: actionIdentifier)
+//                    activity.title = "查看一卡通情况"
+//                    activity.userInfo = ["speech" : "一卡通"]
+//    //            case .OpenHdumap:
+//    //                actionIdentifier = "help.hdu.lemon.ios.hdumap"
+//    //                activity = NSUserActivity(activityType: actionIdentifier)
+//    //                activity.title = "打开杭电地图"
+//    //                activity.userInfo = ["speech" : "杭电地图"]
+//            }
+//            activity.isEligibleForSearch = true
+//            activity.isEligibleForPrediction = true
+//            activity.persistentIdentifier = NSUserActivityPersistentIdentifier(actionIdentifier)
+//            let shortcut = INShortcut(userActivity: activity)
+//            let vc = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+//            vc.delegate = self
+//            present(vc, animated: true, completion: nil)
+//        #endif
+//    }
     
     override func viewWillDisappear(_ animated: Bool) {
         getTokenTimer?.invalidate()
@@ -358,82 +360,82 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
 
 }
 
-extension ViewController: WKNavigationDelegate {
-    
-    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
-        
-        if navigationAction.request.url?.host == "lemon-bridge.help.hdu.party" {
-            let url = navigationAction.request.url
-            if (url!.pathComponents.contains("addSiriShortcut")) {
-                self.setupIntentForSiri(LemonAction(rawValue: url!.lastPathComponent)!)
-            }
-            if (url!.pathComponents.contains("logout")) {
-                let sharedUd = UserDefaults.init(suiteName: "group.help.hdu.lemon.ios")
-                sharedUd?.set(nil, forKey: "token")
-                sharedUd?.synchronize()
-                //print("get logout")
-                self.performSegue(withIdentifier: "gotoLogin", sender: self)
-            }
-            if (url!.pathComponents.contains("toggleDev")) {
-                let sharedUd = UserDefaults.init(suiteName: "group.help.hdu.lemon.ios")
-                sharedUd?.set(sharedUd?.bool(forKey: "dev"), forKey: "dev")
-                sharedUd?.synchronize()
-            }
-            if (url!.pathComponents.contains("setIcon")) {
-                let iconName = url!.lastPathComponent
-//                print("icon name", iconName)
-                if iconName == "default" {
-                    UIApplication.shared.setAlternateIconName(nil)
-                } else {
-                    UIApplication.shared.setAlternateIconName(iconName)
-                }
-            }
-//            if (url!.pathComponents.contains("hduMap")) {
-//                self.performSegue(withIdentifier: "gotoHduMap", sender: self)
+//extension ViewController: WKNavigationDelegate {
+//
+//    func webView(_ webView: WKWebView, decidePolicyFor navigationAction: WKNavigationAction, decisionHandler: @escaping (WKNavigationActionPolicy) -> Void) {
+//
+//        if navigationAction.request.url?.host == "lemon-bridge.help.hdu.party" {
+//            let url = navigationAction.request.url
+//            if (url!.pathComponents.contains("addSiriShortcut")) {
+//                self.setupIntentForSiri(LemonAction(rawValue: url!.lastPathComponent)!)
 //            }
-            decisionHandler(WKNavigationActionPolicy.cancel)
-            return
-        }
-        
-        if navigationAction.navigationType == WKNavigationType.linkActivated {
-            let url = navigationAction.request.url
-            let safariView = SFSafariViewController(url: url!)
-            safariView.preferredControlTintColor = primaryColor
-            present(safariView, animated: true)
-            decisionHandler(WKNavigationActionPolicy.cancel)
-            return
-        }
-        
-        decisionHandler(WKNavigationActionPolicy.allow)
-    }
-    
-    // MARK: WCSession Methods
-    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
-        //print("yes go")
-        
-        let message = [ "token": self.token ?? "" ]
-        wcSession.sendMessage(message, replyHandler: nil) { (error) in
-            print(error.localizedDescription)
-        }
-    }
-    
-    func sessionDidBecomeInactive(_ session: WCSession) {
-        
-        // Code
-        
-    }
-    
-    func sessionDidDeactivate(_ session: WCSession) {
-        
-        // Code
-        
-    }
-    
-//    open func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+//            if (url!.pathComponents.contains("logout")) {
+//                let sharedUd = UserDefaults.init(suiteName: "group.help.hdu.lemon.ios")
+//                sharedUd?.set(nil, forKey: "token")
+//                sharedUd?.synchronize()
+//                //print("get logout")
+//                self.performSegue(withIdentifier: "gotoLogin", sender: self)
+//            }
+//            if (url!.pathComponents.contains("toggleDev")) {
+//                let sharedUd = UserDefaults.init(suiteName: "group.help.hdu.lemon.ios")
+//                sharedUd?.set(sharedUd?.bool(forKey: "dev"), forKey: "dev")
+//                sharedUd?.synchronize()
+//            }
+//            if (url!.pathComponents.contains("setIcon")) {
+//                let iconName = url!.lastPathComponent
+////                print("icon name", iconName)
+//                if iconName == "default" {
+//                    UIApplication.shared.setAlternateIconName(nil)
+//                } else {
+//                    UIApplication.shared.setAlternateIconName(iconName)
+//                }
+//            }
+////            if (url!.pathComponents.contains("hduMap")) {
+////                self.performSegue(withIdentifier: "gotoHduMap", sender: self)
+////            }
+//            decisionHandler(WKNavigationActionPolicy.cancel)
+//            return
+//        }
+//
+//        if navigationAction.navigationType == WKNavigationType.linkActivated {
+//            let url = navigationAction.request.url
+//            let safariView = SFSafariViewController(url: url!)
+//            safariView.preferredControlTintColor = primaryColor
+//            present(safariView, animated: true)
+//            decisionHandler(WKNavigationActionPolicy.cancel)
+//            return
+//        }
+//
+//        decisionHandler(WKNavigationActionPolicy.allow)
 //    }
 //
-//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-//        UIApplication.shared.isNetworkActivityIndicatorVisible = false
-//    }
-}
+////    // MARK: WCSession Methods
+////    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) {
+////        //print("yes go")
+////
+////        let message = [ "token": self.token ?? "" ]
+////        wcSession.sendMessage(message, replyHandler: nil) { (error) in
+////            print(error.localizedDescription)
+////        }
+////    }
+////
+////    func sessionDidBecomeInactive(_ session: WCSession) {
+////
+////        // Code
+////
+////    }
+////
+////    func sessionDidDeactivate(_ session: WCSession) {
+////
+////        // Code
+////
+////    }
+//
+////    open func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
+////        UIApplication.shared.isNetworkActivityIndicatorVisible = true
+////    }
+////
+////    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
+////        UIApplication.shared.isNetworkActivityIndicatorVisible = false
+////    }
+//}
