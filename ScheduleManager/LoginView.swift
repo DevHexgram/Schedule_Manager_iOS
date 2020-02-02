@@ -20,6 +20,7 @@ struct LoginView: View {
     @State var isDisabled: Bool = false
     @State var showErr: Int = 0
     @State private var showingAlert: Bool = false
+    var triggerMainView: (() -> Void)?
     var dismissFunc: (() -> Void)?
     var triggerRegistView: (() -> Void)?
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
@@ -100,7 +101,8 @@ struct LoginView: View {
                                     sharedUd?.synchronize()
                                     print(token)
 //                                    self.triggerWebViewFunc?()
-                                    self.dismissFunc?()
+//                                    self.dismissFunc?()
+                                    self.triggerMainView?()
                                     self.tip = ""
 //                                    self.triggerNewFuncGuideFunc?()
                                 }

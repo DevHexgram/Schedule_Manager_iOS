@@ -26,8 +26,10 @@ class LoginController: UIHostingController<LoginView> {
 //                    (self.presentingViewController?.children[0] as! ViewController).performSegue(withIdentifier: "gotoNewFuncGuide", sender: self)
 //                }
 //            },
-            dismissFunc: {
-                self.dismiss(animated: true, completion: nil)
+            triggerMainView: {
+                self.performSegue(withIdentifier: "gotoMain", sender: self)
+        }, dismissFunc: {
+            self.dismiss(animated: true, completion: nil)
         }, triggerRegistView: {
             self.performSegue(withIdentifier: "gotoRegist", sender: self)
         }
