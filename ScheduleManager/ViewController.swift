@@ -182,6 +182,9 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
             print("gotoLogin")
             self.performSegue(withIdentifier: "gotoLogin", sender: self)
         }
+        else {
+            self.performSegue(withIdentifier: "gotoMain", sender: self)
+        }
 //        if (savedVersion == nil || (currentVersion ?? 0) > (savedVersion ?? 0)) && token != nil{
 //            self.performSegue(withIdentifier: "gotoNewFuncGuide", sender: self)
 //        }
@@ -192,23 +195,25 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
 //            wcSession.activate()
 //        }
         
-        Alamofire.request("https://api.hduhelp.com/token/validate", encoding: JSONEncoding.default, headers:["Authorization": "token \(token ?? "")", "User-Agent": "Alamofire Lemon_iOS"]).validate().responseJSON {
-            response in switch response.result {
-                case .success:
-                    //self.tryLoad(configUrl)
-                    let json = response.result.value
-                    let newRawData = (json as! NSDictionary).object(forKey: "data") as! NSDictionary
-                    let isValid = (newRawData.object(forKey: "isValid")) as! Bool
-                    if isValid == false {
-                        return self.performSegue(withIdentifier: "gotoLogin", sender: self)
-                    }
-                case .failure:
-                    return self.performSegue(withIdentifier: "gotoLogin", sender: self)
-//                    isDelay = true
-                    //self.tryLoad(configUrl)
-//                    print("!!!!!!!!!!!!!!!!!!")
-            }
-        }
+//        Alamofire.request("https://api.hduhelp.com/token/validate", encoding: JSONEncoding.default, headers:["Authorization": "token \(token ?? "")", "User-Agent": "Alamofire Lemon_iOS"]).validate().responseJSON {
+//            response in switch response.result {
+//                case .success:
+//                    //self.tryLoad(configUrl)
+//                    let json = response.result.value
+//                    let newRawData = (json as! NSDictionary).object(forKey: "data") as! NSDictionary
+//                    let isValid = (newRawData.object(forKey: "isValid")) as! Bool
+//                    if isValid == false {
+//                        return self.performSegue(withIdentifier: "gotoLogin", sender: self)
+//                    }
+//                case .failure:
+//                    return self.performSegue(withIdentifier: "gotoLogin", sender: self)
+////                    isDelay = true
+//                    //self.tryLoad(configUrl)
+////                    print("!!!!!!!!!!!!!!!!!!")
+//            }
+//        }
+        
+        
 //        tryLoad(configUrl)
 
 //        if isDelay == true {
