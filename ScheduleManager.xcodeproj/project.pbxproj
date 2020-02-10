@@ -18,6 +18,8 @@
 		4E1F50FE23E730830058D993 /* DailyAffairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50FD23E730830058D993 /* DailyAffairsView.swift */; };
 		4E1F510023E7308F0058D993 /* AffairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F50FF23E7308F0058D993 /* AffairsView.swift */; };
 		4E1F513E23E77E6A0058D993 /* LongTermAffairsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F513D23E77E6A0058D993 /* LongTermAffairsView.swift */; };
+		4E1F514223E792940058D993 /* Affair.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4E1F514123E792940058D993 /* Affair.swift */; };
+		4E9055ED23EFDDAB009518A3 /* SwiftUIPullToRefresh in Frameworks */ = {isa = PBXBuildFile; productRef = 4E9055EC23EFDDAB009518A3 /* SwiftUIPullToRefresh */; };
 		4EABE9BB23DD823500C92A19 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9BA23DD823500C92A19 /* AppDelegate.swift */; };
 		4EABE9BD23DD823500C92A19 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */; };
 		4EABE9C123DD823800C92A19 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4EABE9C023DD823800C92A19 /* Assets.xcassets */; };
@@ -57,6 +59,7 @@
 		4E1F50FD23E730830058D993 /* DailyAffairsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyAffairsView.swift; sourceTree = "<group>"; };
 		4E1F50FF23E7308F0058D993 /* AffairsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AffairsView.swift; sourceTree = "<group>"; };
 		4E1F513D23E77E6A0058D993 /* LongTermAffairsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LongTermAffairsView.swift; sourceTree = "<group>"; };
+		4E1F514123E792940058D993 /* Affair.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Affair.swift; sourceTree = "<group>"; };
 		4EABE9B723DD823500C92A19 /* ScheduleManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ScheduleManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4EABE9BA23DD823500C92A19 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4EABE9BC23DD823500C92A19 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -78,6 +81,7 @@
 			files = (
 				4EABE9EC23DD86A400C92A19 /* Alamofire in Frameworks */,
 				4E1F50F223E4705D0058D993 /* DeviceKit in Frameworks */,
+				4E9055ED23EFDDAB009518A3 /* SwiftUIPullToRefresh in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,6 +110,14 @@
 				4E1F50FF23E7308F0058D993 /* AffairsView.swift */,
 			);
 			path = AffairViews;
+			sourceTree = "<group>";
+		};
+		4E1F514023E792770058D993 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				4E1F514123E792940058D993 /* Affair.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		4EABE9AE23DD823500C92A19 = {
@@ -140,6 +152,7 @@
 				4E1F50FB23E730010058D993 /* MainController.swift */,
 				4E1F50F723E5CFA70058D993 /* ErrorHandler.swift */,
 				4EDBA22B23E30B9100DD0A01 /* GeometryGetter.swift */,
+				4E1F514023E792770058D993 /* Models */,
 				4EDBA22923E30B4800DD0A01 /* keyboardGuardian.swift */,
 				4EABE9C023DD823800C92A19 /* Assets.xcassets */,
 				4EABE9C523DD823800C92A19 /* LaunchScreen.storyboard */,
@@ -169,6 +182,7 @@
 			packageProductDependencies = (
 				4EABE9EB23DD86A400C92A19 /* Alamofire */,
 				4E1F50F123E4705D0058D993 /* DeviceKit */,
+				4E9055EC23EFDDAB009518A3 /* SwiftUIPullToRefresh */,
 			);
 			productName = ScheduleManager;
 			productReference = 4EABE9B723DD823500C92A19 /* ScheduleManager.app */;
@@ -245,6 +259,7 @@
 			packageReferences = (
 				4EABE9EA23DD86A400C92A19 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4E1F50F023E4705D0058D993 /* XCRemoteSwiftPackageReference "DeviceKit" */,
+				4E9055EB23EFDDAB009518A3 /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */,
 			);
 			productRefGroup = 4EABE9B823DD823500C92A19 /* Products */;
 			projectDirPath = "";
@@ -289,6 +304,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E1F514223E792940058D993 /* Affair.swift in Sources */,
 				4EDBA22A23E30B4800DD0A01 /* keyboardGuardian.swift in Sources */,
 				4EABE9BB23DD823500C92A19 /* AppDelegate.swift in Sources */,
 				4EDBA22C23E30B9100DD0A01 /* GeometryGetter.swift in Sources */,
@@ -634,6 +650,14 @@
 				minimumVersion = 3.0.0;
 			};
 		};
+		4E9055EB23EFDDAB009518A3 /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/AppPear/SwiftUI-PullToRefresh";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
 		4EABE9EA23DD86A400C92A19 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire.git";
@@ -649,6 +673,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4E1F50F023E4705D0058D993 /* XCRemoteSwiftPackageReference "DeviceKit" */;
 			productName = DeviceKit;
+		};
+		4E9055EC23EFDDAB009518A3 /* SwiftUIPullToRefresh */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4E9055EB23EFDDAB009518A3 /* XCRemoteSwiftPackageReference "SwiftUI-PullToRefresh" */;
+			productName = SwiftUIPullToRefresh;
 		};
 		4EABE9EB23DD86A400C92A19 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;
