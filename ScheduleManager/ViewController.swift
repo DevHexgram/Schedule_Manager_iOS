@@ -177,7 +177,7 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
 //        print(currentVersion, savedVersion)
         let token = sharedUd?.string(forKey: "token")
         self.token = token
-        print("!!!\(self.token)")
+//        print("!!!\(self.token)")
         if self.token == nil {
             print("gotoLogin")
             self.performSegue(withIdentifier: "gotoLogin", sender: self)
@@ -322,11 +322,6 @@ class ViewController: UIViewController, WKUIDelegate, INUIAddVoiceShortcutViewCo
 //        })
 //    }
     
-    enum LemonAction: String {
-        case OpenSchedule = "schedule"
-        case OpenCard = "card"
-//        case OpenHdumap = "hdumap"
-    }
     
 //    func setupIntentForSiri(_ action: LemonAction) {
 //        #if !targetEnvironment(macCatalyst)

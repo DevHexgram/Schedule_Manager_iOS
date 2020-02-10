@@ -10,17 +10,17 @@ import SwiftUI
 
 struct AffairsView: View {
     var body: some View {
-        NavigationView {
+//        NavigationView {
             DailyAffairsView()
-                .navigationBarTitle(Text("每日任务"))
-            LongTermAffairsView()
-                .navigationBarTitle(Text("长期事务"))
-        }
+//                .navigationBarTitle(Text("每日任务"))
+//            LongTermAffairsView()
+//                .navigationBarTitle(Text("长期事务"))
+//        }
     }
 }
 
-struct AffairsView_Previews: PreviewProvider {
-    static var previews: some View {
-        AffairsView()
-    }
-}
+//struct AffairsView_Previews: PreviewProvider {
+//    static var previews: some View {
+//        AffairsView()
+//    }
+//}

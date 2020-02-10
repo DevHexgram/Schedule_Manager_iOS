@@ -88,7 +88,6 @@ struct LoginView: View {
                         switch response.result {
                             case .success:
                                 let json = response.result.value
-                                print("!!!\(response)")
 //                                print(json)
                                 let msg = (json as! NSDictionary).object(forKey: "msg") as! String
                                  let err = (json as! NSDictionary).object(forKey: "error") as! Int
@@ -99,7 +98,6 @@ struct LoginView: View {
                                     let token = newRawData.object(forKey: "token") as! String
                                     sharedUd?.set(token, forKey: "token")
                                     sharedUd?.synchronize()
-                                    print(token)
 //                                    self.triggerWebViewFunc?()
 //                                    self.dismissFunc?()
                                     self.triggerMainView?()
